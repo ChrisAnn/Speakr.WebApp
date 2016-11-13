@@ -7,7 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7D1510F2-42C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{885C623A-E014-4620-9D09-6AA47EBA1EAF}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.travis.yml = .travis.yml
+		appspec.yml = appspec.yml
 		global.json = global.json
+		Install-App.ps1 = Install-App.ps1
+		NuGet.config = NuGet.config
+		Remove-App.ps1 = Remove-App.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E4AF7966-9937-46A5-99AE-C837168F29ED}"

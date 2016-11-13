@@ -1,0 +1,12 @@
+version: 0.0
+os: windows
+files:
+  - source: \
+    destination: C:\Speakr.WebApp
+hooks:
+  ApplicationStop:
+    - location: .\Remove-App.ps1
+      timeout: 30
+  ApplicationStart:
+    - location: .\Install-App.ps1
+      timeout: 300

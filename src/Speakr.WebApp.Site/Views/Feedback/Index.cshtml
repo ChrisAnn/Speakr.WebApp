@@ -1,0 +1,29 @@
+﻿@model FeedbackFormViewModel
+
+@{
+    ViewBag.Title = "Feedback: " + @Model.TalkName;
+}
+
+<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+    <div class="page-header">
+
+        <h2>Talk Name: @Model.TalkName</h2>
+        <h4>By: @Model.SpeakerName</h4>
+    </div>
+
+    @Html.Partial("_feedbackForm")
+</div>
+
+@section Footer {
+    @await Component.InvokeAsync("Footer")
+}
+
+@section Scripts {
+    <script>
+        $('.rating input').change(function () {
+            var $radio = $(this);
+            $('.rating .selected').removeClass('selected');
+            $radio.closest('label').addClass('selected');
+        });
+    </script>
+}

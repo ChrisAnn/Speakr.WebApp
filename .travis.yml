@@ -5,16 +5,16 @@ dist: trusty
 
 install:
 # Install .net using linux CLI commands
-  - sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list' 
-  - sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
+  - sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
+  - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
   - sudo apt-get update
-  - sudo apt-get install dotnet-dev-1.0.0-preview2-003131
+  - sudo apt-get install dotnet-dev-1.0.0-preview2-1-003177
 
 script:
   - dotnet restore
   - dotnet build src/Speakr.WebApp.Site
   - dotnet build tests/Speakr.WebApp.Site.Tests
-  - dotnet test tests/Speakr.WebApp.Site.Tests -f netcoreapp1.0
+  - dotnet test tests/Speakr.WebApp.Site.Tests
 
 before_deploy:
   - zip -r $(date +'WebApp-%F').zip *
